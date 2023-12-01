@@ -12,8 +12,8 @@ public class testSelectionSort {
 	public void test() {
 		testPositive();
 		testNegative();
-		//testMixed();
-		//testDuplicates();
+		testMixed();
+		testDuplicates();
 	}
 
 	public testSelectionSort() {
@@ -66,10 +66,49 @@ public class testSelectionSort {
 	}
 	
 	public void testMixed(){
-		/** Test data contains with both positive, negative and zeros **/
-		}
+		//Given
+		SelectionSort selectionSort = new SelectionSort();
+		int[] testData = new int[5];
+		testData[0] = -8;
+		testData[1] = 9;
+		testData[2] = 7;
+		testData[3] = -10;
+		testData[4] = 0;
+		int[] SortedTestData = new int[5];
+		SortedTestData[0] = -10;
+		SortedTestData[1] = -8;
+		SortedTestData[2] = 0;
+		SortedTestData[3] = 7;
+		SortedTestData[4] = 9;
+		
+        //When
+		selectionSort.basicSelectionSort(testData);
+        
+		//Then
+        assertArrayEquals(SortedTestData, selectionSort.basicSelectionSort(testData));
+	}
+	
 	public void testDuplicates(){
-	/** Test data contains duplicates **/
+		//Given
+		SelectionSort selectionSort = new SelectionSort();
+		int[] testData = new int[5];
+		testData[0] = -8;
+		testData[1] = -8;
+		testData[2] = 9;
+		testData[3] = 9;
+		testData[4] = 0;
+		int[] SortedTestData = new int[5];
+		SortedTestData[0] = -8;
+		SortedTestData[1] = -8;
+		SortedTestData[2] = 0;
+		SortedTestData[3] = 9;
+		SortedTestData[4] = 9;
+		
+        //When
+		selectionSort.basicSelectionSort(testData);
+        
+		//Then
+        assertArrayEquals(SortedTestData, selectionSort.basicSelectionSort(testData));
 	}
 	
 
